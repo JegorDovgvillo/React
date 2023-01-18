@@ -1,7 +1,7 @@
-import './employeers-add-form.css'
+import './employees-add-form.css'
 import { Component } from 'react';
 
-class EmployeersAddForm extends Component {
+class EmployeesAddForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -57,4 +57,4 @@ class EmployeersAddForm extends Component {
     }
 }
 
-export default EmployeersAddForm;
+export default EmployeesAddForm;

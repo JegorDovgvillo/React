@@ -3,8 +3,8 @@ import './app.css';
 import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
 import AppFilter from '../app-filter/app-filter';
-import EmployeersList from '../employeers-list/employeers-list';
-import EmployeersAddForm from '../employeers-add-form/employeers-add-form';
+import EmployeesList from '../employees-list/employees-list';
+import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
 
 
@@ -113,13 +113,13 @@ class App extends Component {
         }
     }
 
-onFilterSelect = (filter) => {
-this.setState({filter})
-}
+    onFilterSelect = (filter) => {
+        this.setState({ filter })
+    }
 
     render() {
         const { data, term, filter } = this.state;
-        const visibleData = this.filterPost(this.searchEmp(data,term),filter);
+        const visibleData = this.filterPost(this.searchEmp(data, term), filter);
         const employees = this.state.data.length;
         const increased = this.state.data.filter(item => item.increase).length;
         return (
@@ -133,15 +133,15 @@ this.setState({filter})
                     <AppFilter
                         filter={filter}
                         onFilterSelect={this.onFilterSelect}
-                        />
+                    />
                 </div>
-                <EmployeersList
+                <EmployeesList
                     data={visibleData}
                     onDelete={this.deleItem}
                     onToggleIncreas={this.onToggleIncreas}
                     onTogglePromotion={this.onTogglePromotion} />
                 {/* onToggleProp = {this.onToggleProp} этот пропс будет вместо onToggleIncreas и onTogglePromotion*/}
-                <EmployeersAddForm
+                <EmployeesAddForm
                     addItem={this.addNewItem} />
             </div>
         )
